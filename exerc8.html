@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 8. Crie um programa o qual
+a) Receba o limite inferior da amostragem. Esse número que ser maior que 1, caso
+contrário emitir mensagem explicativa e não seguir em frente.
+b) Receba o limite superior da amostragem. Esse número que ser menor que 100,
+caso contrário emitir mensagem explicativa e não seguir em frente
+c) Tenha num botão "Contar" que quando clicado exiba todos os números desde
+o limite inferior (item a.) até o limite superior (item b.)
+ -->
+
+ Receba o limite inferior <input type="text" id="ipt_inf"> <br>
+ Receba o limite superior <input type="text" id="ipt_sup"> <br>
+
+ <button onclick="contar()">Contar</button>
+ <span id="resultado"></span>
+</body>
+</html>
+
+<script>
+    function contar() {
+        var inferior = ipt_inf.value
+        var superior = ipt_sup.value
+        resultado.innerHTML += ``
+            
+        if (inferior <= 1) {
+            alert (`número menor que 1, Não siga em frente`)
+        } else if (superior >= 100) {
+            alert (`número maior que 100, Não siga em frente `)
+        } else{
+            
+            for (let index = 0; index <= superior; index++) {
+                
+                if (index >= inferior) {
+                    resultado.innerHTML += `<br>${index} `
+                }
+                
+            }
+        }
+
+
+
+    }
+</script>
